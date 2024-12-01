@@ -19,9 +19,12 @@ class FitnessStatsSerializer(serializers.ModelSerializer):
 
 
 class GoalSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(queryset=Profile.objects.all())  # Reference Profile
+
     class Meta:
         model = Goal
         fields = '__all__'
+
 
 
 class ActivityLogSerializer(serializers.ModelSerializer):
