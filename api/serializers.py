@@ -28,6 +28,9 @@ class GoalSerializer(serializers.ModelSerializer):
 
 
 class ActivityLogSerializer(serializers.ModelSerializer):
+    profile = serializers.PrimaryKeyRelatedField(queryset=Profile.objects.all())  # Updated to Profile
+
     class Meta:
         model = ActivityLog
         fields = '__all__'
+

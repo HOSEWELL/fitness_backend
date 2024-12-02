@@ -3,9 +3,11 @@ from profiles.models import Profile
 
 class Goal(models.Model):
     GOAL_TYPES = [
+        ("cardio", "Cardio"),
+        ("strength", "Strength"),
         ("steps", "Steps"),
-        ("calories", "Calories"),
-        ("workout", "Workout Duration"),
+        ("workout", "Workout"),
+        ("flexibility", "Flexibility"),
     ]
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)  
     goal_type = models.CharField(choices=GOAL_TYPES, max_length=20)
